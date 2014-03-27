@@ -32,5 +32,5 @@ https://www.pivotaltracker.com/s/projects/1047178
 
 ##ERD
 
-![Mentorly]( https://github.com/ajkamel/mentorly/blob/master/mentorly%20-.png)
+![Mentorly]( https://github.com/ajkamel/mentorly/blob/master/mentorly%20.jpeg)
 
