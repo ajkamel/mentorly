@@ -4,7 +4,7 @@ As a strategy for helping people succeed in life, mentoring works to those open 
 
 But like any development strategy, mentoring works best when measures are taken to ensure quality and effectiveness. When the tool of change is a close relationship, as is the case with mentoring, everyone involved should proceed with care. The risks and improvements to the person are proportional to how long the relationship endures. The longer a relationship lasts, usually the closer the bond and the greater benefit the mentee.
 
-With Mentor.ly we hope to bridge the gap and create a medium to facilitate this process.
+With Mentor.ly we hope to bridge the gap and create a medium to facilitate this 
 
 
 --------------------
@@ -23,3 +23,9 @@ Once this process is complete the organization would be presented with recommend
 
 Mentors would be able to organize meetup's, schedule events and offer words of advice or wisdom at any given time.
 
+
+-----------------------
+
+User Stories
+
+https://www.pivotaltracker.com/s/projects/1047178
