@@ -24,7 +24,7 @@ Once this process is complete the organization would be presented with recommend
 Mentors would be able to organize meetup's, schedule events and offer words of advice or wisdom at any given time.
 
 
------------------------
+----------------------- 
 
 User Stories
 
@@ -32,5 +32,5 @@ https://www.pivotaltracker.com/s/projects/1047178
 
 ##ERD
 
-![Mentorly](https://github.com/ajkamel/mentorly/blob/master/mentorly%20.jpeg)
+![Mentorly](https://raw.githubusercontent.com/ajkamel/mentorly/0c40dc7df391ee4bd90125f71e6b17828c216277/mentorly.jpg)
 
