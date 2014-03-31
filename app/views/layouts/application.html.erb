@@ -8,6 +8,15 @@
 </head>
 <body>
 
+
+<% if current_user %>
+ Hi, <%= current_user.name %>
+
+ 	<%= link_to "Home", users_path %> | <%= link_to "Logout", logout_path %> | <%= link_to "Inbox", conversations_path %>
+<% else %>
+ 	<%= link_to "Login", login_path %>
+<% end %>
+
 <%= yield %>
 
 </body>

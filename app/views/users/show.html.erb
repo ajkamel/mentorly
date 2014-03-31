@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %>
+<p>
+	<strong>Name:</strong>
+	<%= @user.name %>
+
+</p>
+<p>
+	<strong>Email:</strong>
+	<%= @user.email %>
+</p>
+
+<p>	
+	<strong>Password digest</strong>
+	<%= @user.password_digest %>
+</p>
+<p>
+	<strong>Admin?</strong>
+	<%= @user.admin? %>
+</p>
+<p>
+	<strong>Mentor?</strong>
+	<%= @user.mentor? %>
+</p>
+<p>
+	<strong>Interests: </strong>
+	<p><%= @user.interests %>></p>
+</p>
+

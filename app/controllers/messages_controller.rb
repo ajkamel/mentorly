@@ -1,0 +1,6 @@
+class MessagesController < ApplicationController
+
+ 
+  
+
+end

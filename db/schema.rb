@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140328191830) do
+ActiveRecord::Schema.define(version: 20140329011235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,8 +65,8 @@ ActiveRecord::Schema.define(version: 20140328191830) do
     t.text    "bio"
     t.date    "birthdate"
     t.string  "interests"
-    t.boolean "mentor?"
-    t.boolean "admin?"
+    t.boolean "mentor"
+    t.boolean "admin"
   end
 
   add_foreign_key "notifications", "conversations", name: "notifications_on_conversation_id"
