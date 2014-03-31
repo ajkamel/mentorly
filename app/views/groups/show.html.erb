@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %>
+<p>
+	<strong>Group: </strong>
+	<%= @group.name %>
+</p>
+<p>
+    <% group.users.each do |user|%>
+        <%if user.mentor == true %>
+        <strong>Mentor: </strong>
+         <%= user.name %>
+    <% end %>
+</p>
+<p>
+    <% group.users.each do |user|%>
+        <%if user.mentor == false %>
+        <strong>Mentee: </strong>
+         <%= user.name %>
+    <% end %>
+</p>

@@ -1,0 +1,17 @@
+<%= form_for(@group) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+<div>
+
+   <%= collection_select(:users, User.all, :name) %>
+
+</div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
