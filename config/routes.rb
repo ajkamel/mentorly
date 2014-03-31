@@ -7,7 +7,7 @@ get '/logout', to: 'sessions#destroy'
 root to: 'users#index'
 
 resources :users
-
+resources :groups
 resources :messages
 resources :conversations
 resources :notifications
