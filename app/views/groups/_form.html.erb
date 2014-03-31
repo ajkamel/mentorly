@@ -1,17 +1,14 @@
 <%= form_for(@group) do |f| %>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-<div>
-
-   <%= collection_select(:users, User.all, :name) %>
-
+<div class="field">
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
 </div>
-
+<div class="field">
+  <%= f.label :user_id, "Assign Mentor" %><br>
+  <%= collection_select(@group, :user_id, User.all, :id, :name) %>
+</div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-

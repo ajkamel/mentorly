@@ -17,15 +17,20 @@ class GroupsController < ApplicationController
 
 	def new
 
-		@users = User.all
 		@group = Group.new
 
 	end
 
 	def create
 
-		@group = Group.new(group_params)
+		@group = Group.create(group_params)
 
+		p "===================="
+		p @group
+		p "===================="
+
+		redirect_to groups_path
+		# render text: params.inspect
 	end
 
 	def edit
@@ -63,7 +68,7 @@ class GroupsController < ApplicationController
 	private
 
 	def group_params
-		params.require(:group).permit(:name)
+		params.require(:group).permit(:name, :user_id)
 	end
 
 end

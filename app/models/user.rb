@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 	acts_as_messageable
+	has_and_belongs_to_many(:groups)
+
 
   	# attr_accessible :email, :password, :password_confirmation, :remember_me
 
