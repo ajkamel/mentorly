@@ -8,8 +8,13 @@ root to: 'users#index'
 
 resources :users
 resources :groups
-resources :messages
-resources :conversations
-resources :notifications
+
+resources :conversations, only: [:index, :show, :new, :create] do
+    member do
+      post :reply
+      post :trash
+      post :untrash
+  end
+end
   
 end

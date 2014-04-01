@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
 
 
+
 	def index
 
 		@groups = Group.all
@@ -22,15 +23,14 @@ class GroupsController < ApplicationController
 	end
 
 	def create
-
+		all_users = User.all
+		all_users.each do |user|
+			unless user.mentor == false
+			@mentors << user
+			end
+		end
 		@group = Group.create(group_params)
-
-		p "===================="
-		p @group
-		p "===================="
-
 		redirect_to groups_path
-		# render text: params.inspect
 	end
 
 	def edit

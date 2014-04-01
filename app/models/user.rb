@@ -6,9 +6,6 @@ class User < ActiveRecord::Base
 	acts_as_messageable
 	has_and_belongs_to_many(:groups)
 
-
-  	# attr_accessible :email, :password, :password_confirmation, :remember_me
-
 		
 	validates :email, presence: true, uniqueness: true
 	validates :password, length: {minimum: 5}

@@ -4,16 +4,18 @@
 	<%= @group.name %>
 </p>
 <p>
-    <% group.users.each do |user|%>
+    <% @group.users.each do |user|%>
         <%if user.mentor == true %>
         <strong>Mentor: </strong>
          <%= user.name %>
+         <% end %>
     <% end %>
 </p>
 <p>
-    <% group.users.each do |user|%>
+    <% @group.users.each do |user|%>
         <%if user.mentor == false %>
         <strong>Mentee: </strong>
          <%= user.name %>
+         <% end %>
     <% end %>
 </p>
