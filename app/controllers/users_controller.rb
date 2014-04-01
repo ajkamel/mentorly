@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	before_action :authenticate, only: [:new, :create, :edit, :update, :destroy]
+	# before_action :authenticate, only: [:new, :create, :edit, :update, :destroy]
 	
 	def index
 
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 	def new
 
 		@user = User.new
-
+		
 	end
 
 

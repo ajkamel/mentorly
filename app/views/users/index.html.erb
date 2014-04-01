@@ -31,8 +31,8 @@
         <td><%= user.bio %></td>
         <td><%= user.interests %></td>
         <td><%= user.birthdate %></td>
-        <td><%= user.mentor? %></td>
-        <td><%= user.admin? %></td>
+        <td><%= user.mentor %></td>
+        <td><%= user.admin %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

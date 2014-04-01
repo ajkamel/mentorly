@@ -11,7 +11,6 @@ class GroupsController < ApplicationController
 
 	def show
 
-
 		@group = Group.find(params[:id])
 
 	end
@@ -19,26 +18,25 @@ class GroupsController < ApplicationController
 	def new
 
 		@group = Group.new
-
+		@mentors = User.find_mentors
 	end
 
 	def create
-		@mentors = {}
-		all_users = User.all
-		all_users.each do |user|
-			unless user.mentor == false
-			@mentors << user
-			end
+		
+		if current_user.admin == true
+			@group = Group.create(group_params)
+			redirect_to groups_path
+		else
+			redirect_to groups_path
 		end
-		@group = Group.create(group_params)
-		redirect_to groups_path
 	end
 
 	def edit
 
-		@users = User.all
+		@mentors = User.find_mentors
+		@mentees = User.find_mentees
 		@group = Group.find(params[:id])
-		if current_user == @group
+		if current_user.admin == true || (current_user.group == params[:id]  && current_user.mentor == true)
 			render 'edit'
 		else
 			redirect_to root_path
@@ -49,7 +47,7 @@ class GroupsController < ApplicationController
 	def update
 
 		@group = Group.find(params[:id])
-		if current_user == @user
+		if current_user.admin == true || (current_user.group == params[:id]  && current_user.mentor == true)
 			@group.update(group_params)
 			redirect_to @group
 		else
@@ -61,9 +59,12 @@ class GroupsController < ApplicationController
 	def destroy
 
 		@group = Group.find(params[:id])
-		@group.destroy
-		redirect_to group_path
-
+		if current_user.admin == true || (current_user.group == params[:id]  && current_user.mentor == true)
+			@group.destroy
+			redirect_to groups_path
+		else
+		redirect_to groups_path
+		end
 	end
 
 	private

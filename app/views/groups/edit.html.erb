@@ -1,6 +1,22 @@
 <h1>Edit Group</h1>
 
-<%= render 'form' %>
+<%= form_for(@group) do |f| %>
+<div class="field">
+  <%= f.label :name, "Group Name"%><br>
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :user_id, "Assign Mentor" %><br>
+  <%= collection_select(@group, :user_id, @mentors, :id, :name) %>
+</div>
+<div class="field">
+  <%= f.label :user_id, "Assign Mentee" %><br>
+  <%= collection_select(@group, :user_id, @mentees, :id, :name) %>
+</div>
+<div class="actions">
+    <%= f.submit %>
+</div>
+<% end %>
 
 <%= link_to 'Show', @group %>
 <%= link_to 'Back', groups_path %>

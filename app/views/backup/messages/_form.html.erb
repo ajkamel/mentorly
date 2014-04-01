@@ -1,8 +1,0 @@
-<%= form_for :message, url: [:reply, conversation] do |f| %>
-  <%= f.input :subject %>
-  <%= f.input :body %>
-  <form action>
-    <%= f.button :submit, class: 'btn-primary' %>
-    <%= submit_tag 'Cancel', type: :reset, class: 'btn btn-danger' %>
-  </form>
-    <%= end %>

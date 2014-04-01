@@ -9,8 +9,8 @@ class CreateUser < ActiveRecord::Migration
     	t.text "bio"
     	t.date "birthdate"
     	t.string "interests"
-    	t.boolean "mentor?"
-    	t.boolean "admin?"
+    	t.boolean "mentor"
+    	t.boolean "admin"
     end
   end
 end
