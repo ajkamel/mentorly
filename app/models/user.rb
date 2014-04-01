@@ -6,15 +6,19 @@ class User < ActiveRecord::Base
 	acts_as_messageable
 	has_and_belongs_to_many(:groups)
 
+
+
 		
 	validates :email, presence: true, uniqueness: true
 	validates :password, length: {minimum: 5}
 	validates :name, presence: true
 	validates :admin, inclusion: { in: [true, false]}
 
-	# def name
- #  		return "You should add method :name in your Messageable model"
-	# end
+	
+	def mailboxer_email(object)
 
+  		return user.email
+
+	end
 
 end

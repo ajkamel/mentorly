@@ -23,6 +23,7 @@ class GroupsController < ApplicationController
 	end
 
 	def create
+		@mentors = {}
 		all_users = User.all
 		all_users.each do |user|
 			unless user.mentor == false

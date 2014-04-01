@@ -7,8 +7,8 @@ Mailboxer.setup do |config|
   config.default_from = "no-reply@mentorly.org"
 
   #Configures the methods needed by mailboxer
-  config.email_method = :email
-  config.name_method = :name
+  # config.email_method = :email
+  # config.name_method = :name
 
   #Configures if you use or not a search engine and wich one are you using
   #Supported enignes: [:solr,:sphinx]
