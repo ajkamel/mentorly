@@ -1,0 +1,13 @@
+<% @groupmessages.each do |message| %>
+
+<p><%= message.title %></p>
+<p><%= message.message %></p>
+<p><img src="<%= message.img_url %>" height="40px" width="60" alt=""></p>
+<p><%= message.updated_at %></p>
+<p><% message.user_id %></p>
+
+<%= link_to "Edit Message", edit_group_group_message_path(message.group_id, message) %>
+<%= link_to "Delete Message", group_group_message_path(message.group_id, message), method: :delete, data: { confirm: 'Are you sure?'} %>
+<% end %>
+
+<div><%= link_to "Post Message", new_group_group_message_path %></div>

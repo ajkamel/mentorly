@@ -5,9 +5,8 @@
 </div>
 <div class="field">
   <%= f.label :user_id, "Assign Mentor" %><br>
-  <%= collection_select(@group, :user_id, @mentors, :id, :name) %>
+  <%= collection_select(:user, :user_id, @mentors, :id, :name) %>
 </div>
-
 <div class="actions">
     <%= f.submit %>
 </div>

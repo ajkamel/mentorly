@@ -1,7 +1,5 @@
 class GroupsController < ApplicationController
 
-
-
 	def index
 
 		@groups = Group.all
@@ -25,6 +23,8 @@ class GroupsController < ApplicationController
 		
 		if current_user.admin == true
 			@group = Group.create(group_params)
+			@user = User.find(params[:user][:user_id].to_i)
+			@group.users << @user
 			redirect_to groups_path
 		else
 			redirect_to groups_path
@@ -36,7 +36,7 @@ class GroupsController < ApplicationController
 		@mentors = User.find_mentors
 		@mentees = User.find_mentees
 		@group = Group.find(params[:id])
-		if current_user.admin == true || (current_user.group == params[:id]  && current_user.mentor == true)
+		if current_user.admin == true || (@group.users.include?(current_user) && current_user.mentor)
 			render 'edit'
 		else
 			redirect_to root_path
@@ -45,21 +45,28 @@ class GroupsController < ApplicationController
 	end
 
 	def update
-
 		@group = Group.find(params[:id])
-		if current_user.admin == true || (current_user.group == params[:id]  && current_user.mentor == true)
-			@group.update(group_params)
+		if current_user.admin == true || (@group.users.include?(current_user) && current_user.mentor)
+
+			if params[:commit] == "Update Title"
+				@group.update(group_params)
+			elsif params[:commit] == "Add Mentor"
+				@user = User.find(params[:mentor][:user_id].to_i)
+				@group.users << @user
+			elsif params[:commit] == "Add Mentee"
+				@user = User.find(params[:mentee][:user_id].to_i)
+				@group.users << @user
+			end
 			redirect_to @group
 		else
 			redirect_to root_path
 		end
-
 	end
 
 	def destroy
 
 		@group = Group.find(params[:id])
-		if current_user.admin == true || (current_user.group == params[:id]  && current_user.mentor == true)
+		if current_user.admin == true || (@group.users.include?(current_user) && current_user.mentor)
 			@group.destroy
 			redirect_to groups_path
 		else
@@ -70,7 +77,7 @@ class GroupsController < ApplicationController
 	private
 
 	def group_params
-		params.require(:group).permit(:name, :user_id)
+		params.require(:group).permit(:name)
 	end
 
 end

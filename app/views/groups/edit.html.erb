@@ -5,16 +5,22 @@
   <%= f.label :name, "Group Name"%><br>
   <%= f.text_field :name %>
 </div>
+<div class="actions">
+    <%= f.submit "Update Title" %>
+</div>		
 <div class="field">
   <%= f.label :user_id, "Assign Mentor" %><br>
-  <%= collection_select(@group, :user_id, @mentors, :id, :name) %>
+  <%= collection_select(:mentor, :user_id, @mentors, :id, :name) %>
+</div>
+<div class="actions">
+    <%= f.submit "Add Mentor" %>
 </div>
 <div class="field">
   <%= f.label :user_id, "Assign Mentee" %><br>
-  <%= collection_select(@group, :user_id, @mentees, :id, :name) %>
+  <%= collection_select(:mentee, :user_id, @mentees, :id, :name) %>
 </div>
 <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Add Mentee" %>
 </div>
 <% end %>
 

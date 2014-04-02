@@ -4,12 +4,13 @@ get '/login', to: 'sessions#new'
 post '/sessions', to: 'sessions#create'
 get '/logout', to: 'sessions#destroy'
 
-root to: 'users#index'
+root to: 'users#welcome'
 
 resources :users
-resources :groups
+resources :groups do
+	resources :group_messages
+end
 
 resources :conversations
 
-  
 end
