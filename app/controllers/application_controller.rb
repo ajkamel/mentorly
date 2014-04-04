@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user
+  helper_method :current_user, :allowed?, :admin?
   def current_user
   	if session[:user_id]
   		return User.find(session[:user_id])
@@ -20,11 +20,15 @@ class ApplicationController < ActionController::Base
 
   def allowed?
     @group = Group.all
-    current_user.admin == true || (@group.users.include?(current_user) && current_user.mentor)
+    return current_user.admin == true || (@group.users.include?(current_user) && current_user.mentor)
   end
 
   def admin?
-    current_user.admin == true
+    if current_user.admin == true
+      return true
+    else
+      return false
+    end
   end
 
   # def in_group?

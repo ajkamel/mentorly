@@ -35,6 +35,7 @@
     <%= f.label :interests %><br>
     <%= f.text_field :interests %>
   </div>
+  <%if admin? %>
   <div class="field">x
     <%= f.label :admin %><br>
     <%= f.select :admin, [['Active', true], ['Inactive', false]] %>
@@ -43,6 +44,7 @@
     <%= f.label :mentor %><br>
     <%= f.select :mentor, [['Active', true], ['Inactive', false]] %>
   </div>
+  <%end %>
   <div class="actions">
     <%= f.submit %>
   </div>

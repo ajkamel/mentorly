@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 	def edit
 
 		@user = User.find(params[:id])
-		if current_user == @user
+		if current_user == @user || current_user.admin == true
 			render 'edit'
 		else
 			redirect_to root_path
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 	def update
 
 		@user = User.find(params[:id])
-		if current_user == @user
+		if current_user == @user || current_user.admin == true
 			@user.update(user_params)
 			redirect_to @user
 		else
@@ -59,8 +59,12 @@ class UsersController < ApplicationController
 	def destroy
 
 		@user = User.find(params[:id])
-		@user.destroy
-		redirect_to users_path
+		if admin?
+			@user.destroy
+			redirect_to users_path
+		else
+			redirect_to root_path
+		end
 
 	end
 
