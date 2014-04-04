@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 	acts_as_messageable
 	has_and_belongs_to_many(:groups)
+	# has_many :group_messages, through :groups
 
 	validates :email, presence: true, uniqueness: true
 	validates :password, length: {minimum: 5}

@@ -1,4 +1,4 @@
-##Mentor.ly
+##Mentorly
 
 As a strategy for helping people succeed in life, mentoring works to those open to it. It helps give people the confidence, resources and skills they need to reach their potential.
 
@@ -26,7 +26,11 @@ Mentors would be able to organize meetup's, schedule events and offer words of a
 Members would also be able to send mailbox messages to eacher other.
 
 ----------------------- 
-
+##Technologies
+    
+    * Ruby on Rails
+    * PostgreSQL
+  
 ##User Stories
 
 https://www.pivotaltracker.com/s/projects/1047178
