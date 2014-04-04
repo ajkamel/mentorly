@@ -2,13 +2,11 @@
 <p>
 	<strong>Name:</strong>
 	<%= @user.name %>
-
 </p>
 <p>
 	<strong>Email:</strong>
 	<%= @user.email %>
 </p>
-
 <p>	
 	<strong>Password digest</strong>
 	<%= @user.password_digest %>
@@ -26,4 +24,4 @@
 	<p><%= @user.interests %></p>
 </p>
 
-<%= link_to "Update Profile", edit_user_path %> 
+<%= link_to "Update Profile", edit_user_path(@user) %> 

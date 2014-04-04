@@ -41,6 +41,6 @@ https://www.pivotaltracker.com/s/projects/1047178
 
 ##Link
 
-mentorly.herokuapp.com
-mentorly.com
+http://mentorly.herokuapp.com
+http://mentorly.org
 
