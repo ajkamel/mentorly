@@ -1,33 +1,17 @@
 <h1>Mentor Group List</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Group Name</th>
-      <th>Lead Mentor</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.name %></td>
+        <p>Group Name: <%= group.name %></p>
         <% group.users.each do |user|%>
           <%if user.mentor == true %>
-          <td><%= user.name %><td>
+          <p>Mentors: <%= user.name %><p>
           <% end %>
         <% end %>
-        <td><%= link_to 'Group Details', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Delete Group', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <p><%= link_to 'Group Details', group %></p>
+        <p><%= link_to 'Edit', edit_group_path(group) %></p>
+        <p><%= link_to 'Delete Group', group, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <br>
     <% end %>
-  </tbody>
-</table>
-
 <br>
 
 <%= link_to 'New Group', new_group_path %>

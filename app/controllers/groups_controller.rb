@@ -1,33 +1,38 @@
 class GroupsController < ApplicationController
 
 	def index
-
-		@groups = Group.all
-
+		if admin?
+			@groups = Group.all
+		else
+			redirect_to root_path
+		end
 	end
 
 
 	def show
-
+		
 		@group = Group.find(params[:id])
 
 	end
 
 	def new
-
-		@group = Group.new
-		@mentors = User.find_mentors
+		if admin?
+			@group = Group.new
+			@mentors = User.find_mentors
+		else
+			redirect_to root_path
+		end
 	end
 
 	def create
 		
-		if current_user.admin == true
+		if admin?
 			@group = Group.create(group_params)
 			@user = User.find(params[:user][:user_id].to_i)
 			@group.users << @user
 			redirect_to groups_path
 		else
-			redirect_to groups_path
+			redirect_to root_path
 		end
 	end
 
@@ -36,7 +41,7 @@ class GroupsController < ApplicationController
 		@mentors = User.find_mentors
 		@mentees = User.find_mentees
 		@group = Group.find(params[:id])
-		if current_user.admin == true || (@group.users.include?(current_user) && current_user.mentor)
+		if allowed?
 			render 'edit'
 		else
 			redirect_to root_path
@@ -46,8 +51,7 @@ class GroupsController < ApplicationController
 
 	def update
 		@group = Group.find(params[:id])
-		if current_user.admin == true || (@group.users.include?(current_user) && current_user.mentor)
-
+		if allowed?
 			if params[:commit] == "Update Title"
 				@group.update(group_params)
 			elsif params[:commit] == "Add Mentor"

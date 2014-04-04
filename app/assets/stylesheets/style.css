@@ -1,6 +1,6 @@
 body {
   line-height: 1.4;
-  font-family: Georgia, serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   border-top: 10px solid rgb(36, 36, 36); 
 }
 
@@ -8,12 +8,18 @@ header {
   margin-top: 40px;
   margin-bottom: 20px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: url('http://screen-wallpapers.com/wallpapers/1382/1280x800_Nature%20Landscape.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 h1 {
+  text-align: justify;
   font-size: 36px;
   font-weight: 900;
   letter-spacing: -2px;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 nav {
@@ -49,6 +55,12 @@ nav ul li:hover {
 
 .main-img {
   margin-bottom: 20px;
+}
+
+.article {
+  text-align: justify;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 .main-img img {

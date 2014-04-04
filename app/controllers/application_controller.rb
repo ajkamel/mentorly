@@ -17,5 +17,19 @@ class ApplicationController < ActionController::Base
   		redirect_to login_path
   	end
   end
+
+  def allowed?
+    @group = Group.all
+    current_user.admin == true || (@group.users.include?(current_user) && current_user.mentor)
+  end
+
+  def admin?
+    current_user.admin == true
+  end
+
+  # def in_group?
+  #   @group = Group.all
+  #   @group.users.include?(current_user)
+  # end
   
 end

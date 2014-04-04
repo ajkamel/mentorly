@@ -7,15 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-
+<header><nav>	
 <% if current_user %>
- Hi, <%= current_user.name %>
-
- 	<%= link_to "Home", users_path %> | <%= link_to "Messages", conversations_path %> | <%= link_to "Mentor Group", groups_path %> | <%= link_to "Logout", logout_path %> 
+ <%= link_to "Home", root_path %> | <%= link_to "Messages", conversations_path %> | <%= link_to "Mentor Group", groups_path %> | Logged in as <%= current_user.name %> <%= link_to "Logout", logout_path %> 
 <% else %>
- 	<%= link_to "Login", login_path %>
+ 	<%= link_to "Login", login_path %><%= link_to "Create User", new_user_path %> 
 <% end %>
+</nav></header>
 
 <%= yield %>
 

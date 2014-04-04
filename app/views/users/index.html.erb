@@ -1,46 +1,24 @@
-<h1>Member List</h1>
+<div class="container ten columns"><h1>Member List</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Password digest</th>
-      <th>Address</th>
-      <th>Bio</th>
-      <th>Interests</th>
-      <th>Birthday</th>
-      <th>Mentor</th>
-      <th>Admin</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="wrapper">
 
-  <tbody>
     <% @users.each do |user| %>
-      <tr>
-        <td><img src="<%= user.picture_url %>" alt=""></td>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.password_digest %></td>
-        <td><%= user.address %></td>
-        <td><%= user.bio %></td>
-        <td><%= user.interests %></td>
-        <td><%= user.birthdate %></td>
-        <td><%= user.mentor %></td>
-        <td><%= user.admin %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+   
+        <p><img height 150px src="<%= user.picture_url %>" alt=""></p>
+        <p>Name: <%= user.name %></p>
+        <p>Email: <%= user.email %></p>
+        <p>Password Digest: <%= user.password_digest %></p>
+        <p>Address: <%= user.address %></p>
+        <p>Bio: <%= user.bio %></p>
+        <p>Interests: <%= user.interests %></p>
+        <p>Birthday: <%= user.birthdate %></p>
+        <p>Mentor: <%= user.mentor %></p>
+        <p>Admin: <%= user.admin %></p>
+        <p><%= link_to 'Show', user %></p>
+        <p><%= link_to 'Edit', edit_user_path(user) %></p>
+        <p><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     <% end %>
-  </tbody>
-</table>
-
 <br>
 
 <%= link_to 'New User', new_user_path %>
+</div>
