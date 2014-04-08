@@ -31,7 +31,6 @@ class ApplicationController < ActionController::Base
   def admin?
     current_user.admin if current_user
     end
-
   end
 
   # def in_group?
