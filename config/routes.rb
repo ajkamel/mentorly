@@ -9,8 +9,6 @@ root to: 'users#welcome'
 resources :users
 resources :groups do
 	resources :group_messages
-end
-
-resources :conversations
+	end
 
 end

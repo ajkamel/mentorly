@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :allowed?, :admin?, :require_authentication
 
+  #finds if the session contains a user_id for authentication
   def current_user
   	if session[:user_id]
   		return User.find(session[:user_id])
@@ -19,23 +20,25 @@ class ApplicationController < ActionController::Base
   	end
   end
 
+  #Method to redirect to login unless already logged in
   def require_authentication
-    redirect_to login_path unless current_user
+    unless current_user
+      redirect_to login_path 
+    end
   end
 
+  #Private method to authenticate group mentors or admin
   def allowed?
     @group = Group.all
     return current_user.admin == true || (@group.users.include?(current_user) && current_user.mentor)
   end
 
   def admin?
-    current_user.admin if current_user
+    if current_user.admin == true
+      return true
+    else
+      return false
     end
   end
-
-  # def in_group?
-  #   @group = Group.all
-  #   @group.users.include?(current_user)
-  # end
   
 end
