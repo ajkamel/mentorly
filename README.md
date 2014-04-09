@@ -30,6 +30,8 @@ Members would also be able to send mailbox messages to eacher other.
     
     * Ruby on Rails
     * PostgreSQL
+    * Rspec - Shoulda-matchers
+    * Bcrypt
   
 ##User Stories
 
@@ -42,5 +44,6 @@ https://www.pivotaltracker.com/s/projects/1047178
 ##Link
 
 http://mentorly.herokuapp.com
+
 http://mentorly.org
 

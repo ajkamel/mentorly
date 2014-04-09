@@ -1,14 +1,18 @@
 class User < ActiveRecord::Base
 
 	has_secure_password
-	acts_as_messageable
 	has_and_belongs_to_many(:groups)
-	# has_many :group_messages, through :groups
+	has_many :group_messages, through: :groups
 
 	validates :email, presence: true, uniqueness: true
 	validates :password, length: {minimum: 5}
 	validates :name, presence: true
 	validates :admin, inclusion: { in: [true, false]}
+	validates :address, presence: true
+	validates :picture_url, presence: true
+	validates :bio, presence: true
+	validates :birthdate, presence: true
+
 
 	def self.find_mentors
 
@@ -22,7 +26,7 @@ class User < ActiveRecord::Base
 		return @mentors
 	end
 
-
+	#method to find all metees in the user table
 	def self.find_mentees
 
 		@mentees = []
@@ -35,6 +39,7 @@ class User < ActiveRecord::Base
 		return @mentees
 	end
 
+	#method to find te mentor
 	def mentor?
 
 		unless self.mentor == false
@@ -48,6 +53,4 @@ class User < ActiveRecord::Base
 			return self
 		end
 	end
-
-
 end

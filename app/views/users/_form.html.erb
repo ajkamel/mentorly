@@ -35,7 +35,7 @@
     <%= f.label :interests %><br>
     <%= f.text_field :interests %>
   </div>
-  <%if admin? %>
+  <%if @user.admin? %>
   <div class="field">
     <%= f.label :admin %><br>
     <%= f.select :admin, [['Active', true], ['Inactive', false]] %>
