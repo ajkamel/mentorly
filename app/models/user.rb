@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
 	def mentor?
 
 		unless self.mentor == false
-			return self
+			return self.mentor
 		end
 	end
 

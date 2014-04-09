@@ -9,22 +9,15 @@ class ApplicationController < ActionController::Base
   def current_user
   	if session[:user_id]
   		return User.find(session[:user_id])
-  	else
-  		return nil
   	end
   end
 
-  def authenticate
-  	if current_user == nil
-  		redirect_to login_path
-  	end
+  def admin?
+    current_user.admin if current_user
   end
 
-  #Method to redirect to login unless already logged in
   def require_authentication
-    unless current_user
-      redirect_to login_path 
-    end
+    redirect_to login_path unless current_user
   end
 
   #Private method to authenticate group mentors or admin
@@ -33,12 +26,4 @@ class ApplicationController < ActionController::Base
     return current_user.admin == true || (@group.users.include?(current_user) && current_user.mentor)
   end
 
-  def admin?
-    if current_user.admin == true
-      return true
-    else
-      return false
-    end
-  end
-  
 end
