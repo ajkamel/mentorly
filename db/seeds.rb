@@ -41,6 +41,10 @@ john = User.create(name: "Jesse Sessler", email: "john@ga.co", password: "abc123
 						address: "5 5th Ave, New York, NY 10035", picture_url: "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/John_Irving_at_Cologne_2010_%287108%29.jpg/774px-John_Irving_at_Cologne_2010_%287108%29.jpg",
 						bio: "Knowledge Acquirer", interests: "snowboarding, refereeing, soccer",
 						birthdate: "1987-01-01", mentor: false, admin: false)
+demo = User.create(name: "Demo", email: "demo@mt.co", password: "demo123", password_confirmation: "demo123", 
+						address: "5 5th Ave, New York, NY 10001", picture_url: "http://midches.com/images/uploads/default/demo.jpg",
+						bio: "Knowledge Acquirer", interests: "snowboarding, refereeing, soccer",
+						birthdate: "1987-01-01", mentor: false, admin: false)
 
 
 

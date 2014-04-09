@@ -1,5 +1,7 @@
 class GroupMessagesController < ApplicationController
 
+	before_action :require_authentication
+
 	def index
 		@groupmessages = GroupMessage.where(:group_id => params[:group_id])	
 

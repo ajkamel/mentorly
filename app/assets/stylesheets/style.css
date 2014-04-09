@@ -11,6 +11,8 @@ header {
   background: url('http://screen-wallpapers.com/wallpapers/1382/1280x800_Nature%20Landscape.jpg');
   background-size: cover;
   background-position: center;
+  text-align:center;
+
 }
 
 h1 {
@@ -23,8 +25,17 @@ h1 {
 }
 
 nav {
-  margin-top: -20px;
+    display: inline-block;
+    padding:0; 
+    list-style:none;
+    text-align:left;
 }
+
+.logo {
+  display: inline-block;
+  width: 400px
+}
+
 
 nav ul {
   float: right;
@@ -48,6 +59,11 @@ nav ul li {
   transition: .5s all;
 }
 
+.wrapper {
+  width: 600px;
+  margin: 0 auto;
+
+}
 nav ul li:hover {
   background-color: rgb(36, 36, 36);
   cursor: pointer;
@@ -58,9 +74,8 @@ nav ul li:hover {
 }
 
 .article {
-  text-align: justify;
-  margin: 0 auto;
-  max-width: 600px;
+  text-align: center;
+  padding: 5px;
 }
 
 .main-img img {

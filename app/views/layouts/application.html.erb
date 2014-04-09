@@ -6,12 +6,11 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 <header>
-
 <nav>	
-<a href="<% root_path %>"><%= image_tag "MENTORLY-logo.png" %>
-</a>
+<a class="logo" href="<% root_path %>"><%= image_tag "MENTORLY-logo.png" %></a>
 
 <% if current_user %>
 	<%= link_to "Metorly Directory", users_path %>
@@ -23,10 +22,12 @@
  	<%= link_to "Sign Up", new_user_path %> 
 <% end %>
 </nav>
-
 </header>
+<div class="wrapper">
 
 <%= yield %>
 
+</div>
 </body>
+
 </html>

@@ -1,5 +1,7 @@
 class GroupsController < ApplicationController
 
+	before_action :require_authentication
+
 	def index
 		if admin?
 			@groups = Group.all

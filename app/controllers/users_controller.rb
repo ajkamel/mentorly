@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	# before_action :require_authentication, only: [:index, :show, :edit, :update, :destroy]
+	before_action :require_authentication, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
 	def index
 		@users = User.all
@@ -19,8 +19,10 @@ class UsersController < ApplicationController
 
 		@user = User.new(user_params)
 
-		if	@user.save
+		if	@user.save && admin?
 			redirect_to @user
+		elsif @user.save
+			redirect_to login_path
 		else
 			render 'new'
 		end
