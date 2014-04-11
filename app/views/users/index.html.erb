@@ -4,7 +4,7 @@
 
     <% @users.each do |user| %>
    
-        <p><img height 150px src="<%= user.picture_url %>" alt=""></p>
+        <p><img height 100px src="<%= user.picture_url %>"></p>
         <p>Name: <%= user.name %></p>
         <p>Email: <%= user.email %></p>
         <p>Address: <%= user.address %></p>
@@ -13,11 +13,11 @@
         <p>Birthday: <%= user.birthdate %></p>
         <p>Mentor: <%= user.mentor %></p>
         <p>Admin: <%= user.admin %></p>
-        <p><%= link_to 'Show', user %></p>
-        <p><%= link_to 'Edit', edit_user_path(user) %></p>
-        <p><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <p><%= link_to 'View Profile', user %></p>
+        <p><%= link_to 'Edit Profile', edit_user_path(user) %></p>
+        <p><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     <% end %>
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Add User', new_user_path %>
 </div>

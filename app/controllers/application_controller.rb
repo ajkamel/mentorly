@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   	end
   end
 
+  #checks if admin
   def admin?
     current_user.admin if current_user
   end
