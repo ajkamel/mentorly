@@ -10,11 +10,8 @@ class GroupsController < ApplicationController
 		end
 	end
 
-
 	def show
-		
 		@group = Group.find(params[:id])
-
 	end
 
 	def new
@@ -27,7 +24,6 @@ class GroupsController < ApplicationController
 	end
 
 	def create
-		
 		if admin?
 			@group = Group.create(group_params)
 			@user = User.find(params[:user][:user_id].to_i)
@@ -70,7 +66,6 @@ class GroupsController < ApplicationController
 	end
 
 	def destroy
-
 		@group = Group.find(params[:id])
 		if current_user.admin == true || (@group.users.include?(current_user) && current_user.mentor)
 			@group.destroy

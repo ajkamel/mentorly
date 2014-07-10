@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe User do
-	
-	it {should have_secure_password }
+
+  it {should have_secure_password }
   it {should have_and_belong_to_many(:groups)}
   it {should have_many(:group_messages).through(:groups)}
 
