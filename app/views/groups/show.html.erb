@@ -20,6 +20,10 @@
     <% end %>
 </p>
 
+<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/hashtag/<%= @group.name.delete(' ') %>" data-widget-id="487348494093385729">#<%= @group.name %> Tweets</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
 <%= link_to "Messages", group_group_messages_path(@group) %>
 
 
