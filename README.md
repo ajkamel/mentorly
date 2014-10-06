@@ -1,4 +1,5 @@
 ##Mentorly
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/ajkamel/mentorly?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 As a strategy for helping people succeed in life, mentoring works to those open to it. It helps give people the confidence, resources and skills they need to reach their potential.
 
